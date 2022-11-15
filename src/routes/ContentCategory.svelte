@@ -13,7 +13,7 @@
 {#if articles.length > 0}
 <h3>{page.name}</h3>
 	{#each articles as article (article.id)}
-			<a href="{article.parentId}/{article.id}">
+			<a href="articles/{article.parentId}/{article.id}">
 				{article.name}
 			</a>
 	{/each}
