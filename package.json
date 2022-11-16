@@ -19,14 +19,17 @@
 		"eslint-plugin-svelte3": "^4.0.0",
 		"prettier": "^2.6.2",
 		"prettier-plugin-svelte": "^2.7.0",
+		"sass": "^1.56.1",
 		"svelte": "^3.44.0",
 		"svelte-check": "^2.7.1",
+		"svelte-preprocess": "^4.10.7",
 		"typescript": "^4.7.4",
 		"vite": "^3.1.0"
 	},
 	"type": "module",
 	"dependencies": {
 		"@sveltejs/adapter-static": "^1.0.0-next.48",
+		"postcss-remove-unused-css": "^1.0.4",
 		"svelte-markdown": "^0.2.3"
 	}
 }

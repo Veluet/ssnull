@@ -1,0 +1,72 @@
+/*=Mixins (or functions)
+ * @author  Steven Soblo
+ * @purpose Organize mixins and functions created for global use.
+ * @notes   Please retain the order of the first 3 options as $start, $stop, $step
+ *          to retain the consistency.
+ *
+ *          Don't bring localized mixins into this file, leave them in context.
+ */
+
+/*=Helper Loop */
+// e.g. .a-1 {z-index:1} .a-2 {z-index:2} .a-3 {z-index:3}
+@mixin helper-loop($start, $stop, $step, $class-name, $property, $unit, $unit-start: false,
+                   $unit-step: false, $extend: "") {
+
+  $i: $start;
+
+  @if not $unit-start {
+    $unit-start: $start;
+  }
+
+  @if not $unit-step {
+    $unit-step: $step;
+  }
+
+  $value: $unit-start;
+
+  @while $i <= $stop {
+
+    .#{$class-name}-#{$i} {
+      #{$property}: #{$value}#{$unit}!important;
+    };
+
+    @if ($extend != "") {
+      .#{$class-name}-#{$i} { @extend #{$extend} }
+    }
+
+    $value: $value + $unit-step;
+
+    $i: $i + $step;
+
+  }
+}
+
+/*One Instruction Many Grouped Classes Loop*/
+// e.g. .a-1, .a-2, .a-3 {z-index:0;}
+@mixin group-classes($start, $stop, $step, $selector, $selector-suffix, $property, $value) {
+
+  $selector-list: '';
+
+  $i: $start;
+
+  @while $i <= $stop {
+
+    $comma: ', ';
+
+    @if $i == $stop {
+      $comma: '';
+    }
+
+    $selector-list: $selector-list + $selector + '-' + $i + $selector-suffix + $comma;
+
+    $i: $i + $step;
+
+  }
+
+
+
+  #{$selector-list} {
+    #{$property}: #{$value}
+  }
+
+}

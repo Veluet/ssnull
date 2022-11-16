@@ -1,0 +1,62 @@
+/* Whenever possible follow the formatting that bootstrap uses.
+
+/* Sizing EM */
+// For when an element needs to fit a string that has a max number of characters.
+.em-1 {
+  width: 1em;
+  height: 1em;
+}
+
+.full-width {
+  width: 100%;
+}
+.width-50 {
+  width: 50%;
+}
+//.width-33 {
+//  width: calc(100% / 3);
+//}
+//.width-25 {
+//  width: 25%;
+//}
+
+/* Margins */
+.margin-0 {
+  margin: 0 !important;
+}
+
+@include helper-loop(0, 15, 5, 'margin-right', 'margin-right', 'px');
+@include helper-loop(0, 15, 5, 'margin-bottom', 'margin-bottom', 'px');
+@include helper-loop(0, 15, 5, 'margin-left', 'margin-left', 'px');
+
+/* Padding */
+@include helper-loop(0, 15, 5, 'padding', 'padding', 'px');
+@include helper-loop(0, 15, 5, 'padding-top', 'padding-top', 'px');
+@include helper-loop(0, 15, 5, 'padding-right', 'padding-right', 'px');
+@include helper-loop(0, 15, 5, 'padding-bottom', 'padding-bottom', 'px');
+@include helper-loop(0, 15, 5, 'padding-left', 'padding-left', 'px');
+
+/* Borders */
+.border-radius {
+ border-radius: var(--border-radius);
+}
+
+/* Positioning */
+// Used for nudging elements slightly.
+.relative {
+  position: relative;
+}
+
+@include helper-loop(1, 5, 1, 'top', 'top', 'px', false, false, ".relative");
+@include helper-loop(1, 5, 1, 'bottom', 'bottom', 'px', false, false, ".relative");
+@include helper-loop(1, 4, 1, 'left', 'left', 'px', false, false, ".relative");
+// Enable when needed.
+// @include helper-loop(1, 4, 1, 'right', 'right', 'px', false, false, ".relative");
+
+/* Overflow */
+.overflow-x-hidden {
+  overflow-x: hidden !important;
+}
+
+
+

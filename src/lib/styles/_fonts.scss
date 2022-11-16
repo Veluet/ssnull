@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'Fjalla One';
+    src: local('Fjalla One'), local('FjallaOne-Regular'),
+        url('./lib/fonts/FjallaOne-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'Cantarell';
+    src: local('Cantarell Regular'), local('Cantarell-Regular'),
+        url('./lib/fonts/Cantarell-Regular.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'Cantarell';
+    src: local('Cantarell Oblique'), local('Cantarell-Oblique'),
+        url('./lib/fonts/Cantarell-Oblique.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'Cantarell';
+    src: local('Cantarell Bold'), local('Cantarell-Bold'),
+        url('./lib/fonts/Cantarell-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'Cantarell';
+    src: local('Cantarell Bold Oblique'), local('Cantarell-BoldOblique'),
+        url('./lib/fonts/Cantarell-BoldOblique.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+    font-display: fallback;
+}

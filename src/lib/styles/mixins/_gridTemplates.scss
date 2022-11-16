@@ -1,0 +1,45 @@
+/* Grid Templates */
+// Add the breakpoints as they are needed: 'xs', 'sm', 'md', 'lg', 'xl', 'xxl'
+$grid-template-breakpoints: 'xs', 'lg';
+
+@mixin grid-breakpoint-styles($style, $breakpoint) {
+
+  @if $breakpoint == 'xs' {
+    $breakpoint: '';
+  }
+  @else {
+    $breakpoint: '-#{$breakpoint}';
+  }
+
+  .grid-#{$style}#{$breakpoint}-2 {
+    grid-template-#{$style}: 1fr 1fr;
+  }
+  .grid-#{$style}#{$breakpoint}-3 {
+    grid-template-#{$style}: 1fr 1fr 1fr;
+  }
+  .grid-#{$style}#{$breakpoint}-4 {
+    grid-template-#{$style}: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@mixin grid-templates-loop($breakpoints) {
+
+  @each $breakpoint in $breakpoints {
+
+    @media (min-width: map-get($bootstrap-breakpoints, $breakpoint)) {
+      @include grid-breakpoint-styles('columns', $breakpoint);
+      @include grid-breakpoint-styles('rows', $breakpoint);
+
+      .grid-template-columns-#{$breakpoint} {
+        grid-template-rows: unset!important;
+      }
+      .grid-template-rows-#{$breakpoint} {
+        grid-template-columns: unset!important;
+      }
+    }
+
+  }
+
+}
+
+@include grid-templates-loop($grid-template-breakpoints);

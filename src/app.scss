@@ -1,0 +1,17 @@
+/* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing */
+@import "./lib/styles/reset";
+@import "./lib/styles/flexbox/main.scss";
+
+@import "./lib/styles/fonts";
+
+@import "./lib/styles/mixins";
+@import "./lib/styles/mixins/dumpMap";
+@import "./lib/styles/mixins/color";
+@import "./lib/styles/mixins/spacing";
+// @import "./lib/styles/mixins/gridTemplates";
+
+@import "./lib/styles/cssVariables";
+
+@import "./lib/styles/helpers";
+@import "./lib/styles/typography";
+@import "./lib/styles/base";

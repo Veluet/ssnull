@@ -1,0 +1,32 @@
+html, body {
+    height: 100%;
+    min-height: 100vh;
+}
+body {
+    font-family: 'Cantarell', 'Courier New', Courier, monospace;
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Fjalla One', 'Courier New', Courier, monospace;
+}
+
+p,
+ul {
+    margin-bottom: 1rem;
+}
+
+p:last-child,
+ul:last-child {
+    margin-bottom: 0;
+}
+
+strong {
+    font-weight: bold;
+}

@@ -1,0 +1,9 @@
+/* Dump map as CSS Variables */
+// For use in _cssVariables
+@mixin dump-map($map) {
+    :root {
+      @each $name, $value in $map {
+        --#{$name}: #{$value}
+      }
+    }
+  }

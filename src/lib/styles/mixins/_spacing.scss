@@ -1,0 +1,81 @@
+/* Child Spacing
+ * Stuff to generate a helper classes for setting the spacing on all child elements.
+ */
+
+/* EXAMPLE: .col-margin-1 or .row-margin-1 or .row-padding-1 or .col-margin-12 */
+// You get 1, 2, 3, 4, 8, 12, 16.  Padding isn't enabled (so enable if needed). Jump to end of file.
+
+// Add the breakpoints as they are needed: 'xs', 'sm', 'md', 'lg', 'xl', 'xxl'
+$spacing-breakpoints: 'xs', 'sm', 'md', 'lg', 'xl', 'xxl';
+
+@mixin spacing-styles($property, $i, $value, $breakpoint) {
+
+  @if $breakpoint == 'xs' {
+    $breakpoint: '';
+  }
+  @else {
+    $breakpoint: '-#{$breakpoint}';
+  }
+
+  .col-#{$property}#{$breakpoint}-#{$i} > * {
+    #{$property}-left: calc(#{$value}rem / 2);
+    #{$property}-right: calc(#{$value}rem / 2);
+  }
+  .col-#{$property}#{$breakpoint}-#{$i} > *:first-child {
+    #{$property}-left: 0
+  }
+  .col-#{$property}#{$breakpoint}-#{$i} > *:last-child {
+    #{$property}-right: 0
+  }
+
+  .row-#{$property}#{$breakpoint}-#{$i} > * {
+    #{$property}-top: calc(#{$value}rem / 2);
+    #{$property}-bottom: calc(#{$value}rem / 2);
+  }
+  .row-#{$property}#{$breakpoint}-#{$i} > *:first-child {
+    #{$property}-top: 0
+  }
+  .row-#{$property}#{$breakpoint}-#{$i} > *:last-child {
+    #{$property}-bottom: 0
+  }
+}
+
+@mixin spacing-breakpoint-loop($property, $i, $value, $breakpoints) {
+
+  @each $breakpoint in $breakpoints {
+
+    @media (min-width: map-get($bootstrap-breakpoints, $breakpoint)) {
+      @include spacing-styles($property, $i, $value, $breakpoint);
+    }
+
+  }
+
+}
+
+@mixin spacing-loop($amount, $steps, $property, $start: false) {
+
+  $i: 1;
+
+  @if $start {
+    $i: $start;
+  }
+
+  $value: $amount;
+
+  @while $i <= $steps {
+
+  @include spacing-breakpoint-loop($property, $i, $value, $spacing-breakpoints);
+
+  $value: $value + $amount;
+
+    $i: $i + 1;
+  }
+}
+// Example: .col-margin-1
+@include spacing-loop(.25, 4, 'margin');
+@include spacing-loop(2, 8, 'margin', 8); // For 2rem
+@include spacing-loop(3, 12, 'margin', 12); // For 3rem
+@include spacing-loop(4, 16, 'margin', 16); // For 4rem
+
+// Enable if needed.
+// @include spacing-loop(.25, 4, 'padding');

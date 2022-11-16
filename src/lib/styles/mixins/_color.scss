@@ -1,0 +1,63 @@
+
+//  Create shades of each color and return values as map
+@function color-map($color, $values) {
+    $base:        $values;
+    $lightest-ssjgssj:    scale-color(mix(#fff, $values, 99%), $saturation: 21%);
+    $lightest-ssjg:    scale-color(mix(#fff, $values, 97%), $saturation: 19%);
+    $lightest-ssj3:    scale-color(mix(#fff, $values, 93%), $saturation: 18%);
+    $lightest-ssj2:    scale-color(mix(#fff, $values, 90%), $saturation: 17%);
+    $lightest-ssj:    scale-color(mix(#fff, $values, 80%), $saturation: 15%);
+    $lightest:    scale-color(mix(#fff, $values, 60%), $saturation: 13%);
+    $lighter:     scale-color(mix(#fff, $values, 25%), $saturation: 11%);
+    $light-hint:  scale-color(mix(#fff, $values, 15%), $saturation:  9%);
+    $dark-hint:   scale-color(mix(#000, $values,  5%), $saturation: -3%);
+    $darker:      scale-color(mix(#000, $values, 30%), $saturation: -9%);
+    $darkest:     scale-color(mix(#000, $values, 45%), $saturation: -15%);
+  
+  
+    $color-shades: (
+            #{$color}-100: $lightest,
+            #{$color}-75:  $lighter,
+            //#{$color}-66:  $light-hint,
+            #{$color}-50:  $base,
+            //#{$color}-33:  $dark-hint,
+            #{$color}-25:  $darker,
+            #{$color}-0:   $darkest
+    );
+  
+    @return $color-shades;
+  }
+  //  Set up master map for all colors
+  @function color-maps($colors) {
+    $color-map: ();
+  
+    @each $color, $value in $colors {
+      $map: (color-map($color, $value));
+      $color-map: map-merge($color-map, $map);
+    }
+  
+    @return $color-map;
+  }
+  
+  //  Initiate maps function to build maps
+  $color-map: color-maps($colors);
+  
+  @each $name, $color-shade in $color-map {
+    .background-#{$name} {
+      background-color: #{$color-shade}!important;
+    };
+    .text-#{$name} {
+      color: #{$color-shade}!important;
+    };
+    .border-#{$name} {
+      border-width: 1px;
+      border-style: solid;
+      border-color: #{$color-shade}!important;
+    };
+  }
+  
+  //  Create mixin to better call colors from map
+  @function color($color, $shade) {
+    @return map-get($color-map, #{$color}-#{$shade});
+  }
+  

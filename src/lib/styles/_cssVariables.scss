@@ -1,0 +1,42 @@
+/*=Mixins (or functions)
+ * @author  Steven Soblo
+ * @purpose Declare global CSS variables used across project.
+ * @notes   There's a better way to do this using SCSS variables instead,
+ *          but this is faster for development at the moment.
+ */
+:root {
+  --border-radius: 4px;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 500;
+  --font-weight-bold: 700;
+}
+@include dump-map($color-map);
+@include dump-map($colors);
+@include dump-map($deliberate-colors);
+
+/* Font Sizes */
+// This is a manual write up from the helper loops
+// The helper loops need to be replaced with maps, not coding that out at this time.
+// This regx was easier than doing that in the mean time, turn on globals and new lines:
+// \.font-size-(\d+)[\w\d \-\.\,#]*{\s*font-size:\s*([\d\.]*rem)\s*\!important;\s*}
+:root {
+  --font-size-10: 0.625rem;
+  --font-size-12: 0.75rem;
+  --font-size-14: 0.875rem;
+  --font-size-16: 1rem;
+  --font-size-18: 1.125rem;
+  --font-size-20: 1.25rem;
+  --font-size-22: 1.375rem;
+  --font-size-24: 1.5rem;
+  --font-size-26: 1.625rem;
+  --font-size-28: 1.75rem;
+  --font-size-30: 1.875rem;
+  --font-size-32: 2rem;
+  --font-size-34: 2.125rem;
+  --font-size-36: 2.25rem;
+  --font-size-11: 0.6875rem;
+  --font-size-13: 0.8125rem;
+  --font-size-15: 0.9375rem;
+  --font-size-17: 1.0625rem;
+}

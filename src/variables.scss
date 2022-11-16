@@ -1,0 +1,37 @@
+/* Breakpoints */
+$bootstrap-breakpoints: (
+    'xs': 0,
+    'sm': 576px,
+    'md': 768px,
+    'lg': 992px,
+    'xl': 1200px,
+    'xxl': 1400px,
+);
+$colors: (
+    "primary":#EAEB24,
+    "purple": #8824EB,
+    "blue": #2524EB,
+    "green": #24EB88,
+    "cyan": #D43E7C,
+    "lilac": #5D59A6,
+);
+
+// Color theme was generated from artwork,
+// so not all colors handle being generated algorithmically well.
+
+
+$white: #FAFAFA;
+$black-0: #13130E;
+$black-25: #232210;
+$gray-50: #808080;
+$gray-25: #6E6D69;
+$primary-00: #403F17;
+
+$deliberate-colors: (
+    "white": $white,
+    "black-0": $black-0,
+    "black-25": $black-25,
+    "gray-50": $gray-50,
+    "gray-25": $gray-25,
+    "primary-00": $primary-00,
+);
