@@ -12,10 +12,10 @@ const config = {
             assets: "docs",
 			strict: false,
         }),
-        // paths: {
-        //     // change below to your repo name
-        //     base: dev ? "" : "/ssnull",
-        // },
+        paths: {
+            // change below to your repo name
+            base: dev ? "" : "/ssnull",
+        },
 	},
 
 	preprocess: [
