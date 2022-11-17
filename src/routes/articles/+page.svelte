@@ -1,6 +1,6 @@
 <script>
-	import ContentCategory from './ContentCategory.svelte';
-    import { pages } from '../lib/stores/SiteStore.js';
+	import ContentCategory from '../ContentCategory.svelte';
+    import { pages } from '../../lib/stores/SiteStore';
 </script>
 
 {#each $pages as {id, name}, i}
