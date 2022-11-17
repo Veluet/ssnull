@@ -2,6 +2,7 @@
 	import '../app.scss';
 	//import './styles.css';
 	import { page } from '$app/stores';
+	import { base } from '$app/paths';
 	let currentPath;
 	$: currentPath = $page.url.pathname.split('/').filter((x) => x !== '');
 	console.log(currentPath);
@@ -13,7 +14,7 @@
 			<div class="the-box">
 				<header>
 					{#if currentPath.length > 0}
-						<a href="/">
+						<a href="{base}/">
 							<h1>SSNULL</h1>
 						</a>
 					{:else}
