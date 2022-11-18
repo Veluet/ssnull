@@ -1,6 +1,47 @@
 <script>
-</script>
+	import Carousel from './../../../Carousel.svelte';
 
+    let imag = [
+		{
+			src: 'http://placeimg.com/640/480/animals',
+			alt: ''
+		},
+		{
+			src: 'http://placeimg.com/640/480/arch',
+			alt: ''
+		},
+		{
+			src: 'http://placeimg.com/640/480/nature',
+			alt: ''
+		},
+		{
+			src: 'http://placeimg.com/640/480/tech',
+			alt: ''
+		}
+	];
+
+    let images = [
+		{
+			src: 'http://placeimg.com/640/480/people',
+			alt: ''
+		},
+		{
+			src: 'http://placeimg.com/640/480/people/grayscale',
+			alt: ''
+		},
+		{
+			src: 'http://placeimg.com/640/480/people/sepia',
+			alt: ''
+		},
+		{
+			src: 'http://placeimg.com/640/480/nature/sepia',
+			alt: ''
+		}
+	];
+</script>
+<Carousel images={imag} />
+
+<Carousel {images} />
 <p>
 	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
 	labore et dolore magna aliqua. Egestas quis ipsum suspendisse ultrices gravida dictum fusce ut

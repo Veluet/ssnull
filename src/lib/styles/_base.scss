@@ -8,6 +8,16 @@ body {
     overflow-x: hidden;
 }
 
+h1 {
+    font-size: var(--font-size-36);
+}
+h2 {
+    font-size: var(--font-size-24);
+}
+h3 {
+    font-size: var(--font-size-18);
+}
+
 h1,
 h2,
 h3,
