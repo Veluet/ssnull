@@ -25,16 +25,17 @@
   margin: 0 !important;
 }
 
-@include helper-loop(0, 15, 5, 'margin-right', 'margin-right', 'px');
-@include helper-loop(0, 15, 5, 'margin-bottom', 'margin-bottom', 'px');
-@include helper-loop(0, 15, 5, 'margin-left', 'margin-left', 'px');
+@include helper-loop(0, 4, 1, 'margin-top', 'margin-top', 'rem', 0, .25);
+@include helper-loop(0, 4, 1, 'margin-right', 'margin-right', 'rem', 0, .25);
+@include helper-loop(0, 8, 1, 'margin-bottom', 'margin-bottom', 'rem', 0, .25);
+@include helper-loop(0, 4, 1, 'margin-left', 'margin-left', 'rem', 0, .25);
+
 
 /* Padding */
-@include helper-loop(0, 15, 5, 'padding', 'padding', 'px');
-@include helper-loop(0, 15, 5, 'padding-top', 'padding-top', 'px');
-@include helper-loop(0, 15, 5, 'padding-right', 'padding-right', 'px');
-@include helper-loop(0, 15, 5, 'padding-bottom', 'padding-bottom', 'px');
-@include helper-loop(0, 15, 5, 'padding-left', 'padding-left', 'px');
+@include helper-loop(0, 4, 1, 'padding-top', 'padding-top', 'rem', 0, .25);
+@include helper-loop(0, 4, 1, 'padding-right', 'padding-right', 'rem', 0, .25);
+@include helper-loop(0, 4, 1, 'padding-bottom', 'padding-bottom', 'rem', 0, .25);
+@include helper-loop(0, 4, 1, 'padding-left', 'padding-left', 'rem', 0, .25);
 
 /* Borders */
 .border-radius {
@@ -58,5 +59,37 @@
   overflow-x: hidden !important;
 }
 
-
-
+/* Flex */
+.d-flex {
+  display: flex;
+}
+.justify-content-start {
+  justify-content: start;
+}
+.justify-content-end {
+  justify-content: end;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.justify-content-between {
+  justify-content: space-between;
+}
+.justify-content-around {
+  justify-content: space-around;
+}
+.align-items-start {
+  align-items: flex-start;
+}
+.align-items-end {
+  align-items: flex-end;
+}
+.align-items-center {
+  align-items: center;
+}
+.align-items-baseline {
+  align-items: baseline;
+}
+.align-items-stretch {
+  align-items: stretch;
+}

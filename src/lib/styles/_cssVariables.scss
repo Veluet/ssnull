@@ -5,15 +5,18 @@
  *          but this is faster for development at the moment.
  */
 :root {
-  --border-radius: 4px;
+  --border-radius: 3px;
   --font-weight-light: 300;
   --font-weight-regular: 400;
   --font-weight-semibold: 500;
   --font-weight-bold: 700;
 }
+
 @include dump-map($color-map);
 @include dump-map($colors);
 @include dump-map($deliberate-colors);
+@include dump-map($white-opacity);
+
 
 /* Font Sizes */
 // This is a manual write up from the helper loops

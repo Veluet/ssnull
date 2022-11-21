@@ -62,6 +62,7 @@
 	.carousel {
 		margin-left: 15%;
 		margin-right: 15%;
+		margin-bottom: 2em;
 	}
 
 	.carousel {
@@ -107,6 +108,7 @@
 		width: auto;
 		min-width: 100%;
 		height: 100%;
+		border-radius: var(--border-radius);
 	}
 
 	.carousel-controls {
@@ -117,7 +119,7 @@
 		z-index: 999;
 		font-size: 100px;
 		line-height: 600px;
-		color: #fff;
+		color: var(--white);
 	}
 
 	.carousel-controls label {
@@ -161,12 +163,18 @@
 
 	.carousel-dots .carousel-dot {
 		display: inline-block;
-		width: 30px;
-		height: 30px;
+		width: 15px;
+		height: 15px;
 		border-radius: 50%;
-		background-color: #666;
+		background-color: var(--black-25);
 		opacity: 0.5;
 		margin: 10px;
+		transition: background 200ms ease-in-out;
+	}
+
+	.carousel-dot:hover {
+		cursor: pointer;
+		background-color: var(--primary-0);
 	}
 
 	input:checked + .slide-container .slide-image {

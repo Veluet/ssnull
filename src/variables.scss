@@ -26,6 +26,7 @@ $black-25: #232210;
 $gray-50: #808080;
 $gray-25: #6E6D69;
 $primary-00: #403F17;
+$text: #484848;
 
 $deliberate-colors: (
     "white": $white,
@@ -34,4 +35,10 @@ $deliberate-colors: (
     "gray-50": $gray-50,
     "gray-25": $gray-25,
     "primary-00": $primary-00,
+    "text": $text,
 );
+
+$white-opacity: (
+    "white-opacity-90": rgba($white, .9),
+    "white-opacity-75": rgba($white, .75),
+)

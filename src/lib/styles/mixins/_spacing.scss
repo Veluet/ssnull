@@ -6,7 +6,7 @@
 // You get 1, 2, 3, 4, 8, 12, 16.  Padding isn't enabled (so enable if needed). Jump to end of file.
 
 // Add the breakpoints as they are needed: 'xs', 'sm', 'md', 'lg', 'xl', 'xxl'
-$spacing-breakpoints: 'xs', 'sm', 'md', 'lg', 'xl', 'xxl';
+$spacing-breakpoints: 'xs'; //, 'sm', 'md', 'lg', 'xl', 'xxl';
 
 @mixin spacing-styles($property, $i, $value, $breakpoint) {
 
