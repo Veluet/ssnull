@@ -25,6 +25,9 @@
 	}
 
 	.image > img {
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
 		height: 600px;
 		width: auto;
 		border-radius: var(--border-radius);

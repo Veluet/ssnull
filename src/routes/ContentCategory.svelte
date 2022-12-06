@@ -10,7 +10,7 @@
 	const page = $pages.find((x) => x.id === id);
 
 	const articles = $content.filter((x) => x.parentId === id);
-	const imagePath = "/src/lib/images/thumbnails/";
+	const imagePath = "/images/thumbnails/";
 </script>
 
 {#if articles.length > 0}

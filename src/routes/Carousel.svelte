@@ -8,7 +8,7 @@
 	if (typeof images !== 'undefined' && images.length > 0) {
 		images.forEach((element, i) => {
 			element.id = i;
-			element.prev = i == 0 ? images.length : i - 1;
+			element.prev = i == 0 ? images.length - 1 : i - 1;
 			element.next = i == images.length - 1 ? 0 : i + 1;
 		});
 
@@ -101,7 +101,8 @@
 	}
 
 	.slide-image {
-		display: block;
+		display: flex;
+		justify-content: center;
 		position: absolute;
 		width: 100%;
 		height: 100%;
@@ -112,7 +113,7 @@
 
 	.slide-image img {
 		width: auto;
-		min-width: 100%;
+		min-width: auto;
 		height: 100%;
 		border-radius: var(--border-radius);
 	}

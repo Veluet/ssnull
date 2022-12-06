@@ -2,7 +2,7 @@
 	import Carousel from './../../../Carousel.svelte';
 	import Image from './../../../Image.svelte';
 
-    const imagePath = "/src/lib/images/articles/signup-redesign/";
+    const imagePath = "/images/articles/signup-redesign/";
 
 	let finalProd = [
 		{
