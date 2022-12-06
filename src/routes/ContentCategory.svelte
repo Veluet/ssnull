@@ -10,6 +10,7 @@
 	const page = $pages.find((x) => x.id === id);
 
 	const articles = $content.filter((x) => x.parentId === id);
+	const imagePath = "/src/lib/images/thumbnails/";
 </script>
 
 {#if articles.length > 0}
@@ -19,7 +20,7 @@
 			{#each articles as article (article.id)}
 			<div class="article-block">
 				<a href="{base}/articles/{article.parentId}/{article.id}" class="article-link">
-					<img src="" alt="" class="article-link-img" />
+					<img src="{imagePath + article.id + '-1x.png'}" srcset="{imagePath + article.id + '-2x.png 2x'}" alt="" class="article-link-img" />
 					<span class="article-link-name">{article.name}</span>
 				</a>
 				<div class="article-summary margin-top-1">{article.summary}</div>

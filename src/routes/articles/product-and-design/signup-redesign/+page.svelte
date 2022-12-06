@@ -1,102 +1,105 @@
 <script>
 	import Carousel from './../../../Carousel.svelte';
+	import Image from './../../../Image.svelte';
 
-    let imag = [
+    const imagePath = "/src/lib/images/articles/signup-redesign/";
+
+	let finalProd = [
 		{
-			src: 'http://placeimg.com/640/480/animals',
-			alt: ''
+			src: imagePath + 'signup-redesign.png',
+			alt: '',
+            summary: 'Production version of the signup redesign.',
 		},
 		{
-			src: 'http://placeimg.com/640/480/arch',
-			alt: ''
-		},
-		{
-			src: 'http://placeimg.com/640/480/nature',
-			alt: ''
-		},
-		{
-			src: 'http://placeimg.com/640/480/tech',
-			alt: ''
+			src: imagePath + 'pricing-plan.png',
+			alt: '',
+            summary: 'Credit card entry step of the signup redesign.',
 		}
 	];
 
-    let images = [
+	let designVsProd = [
 		{
-			src: 'http://placeimg.com/640/480/people',
-			alt: ''
+			src: imagePath + 'new-signup-figma-design.png',
+			alt: '',
+            summary: 'Mockup from Figma.',
 		},
 		{
-			src: 'http://placeimg.com/640/480/people/grayscale',
-			alt: ''
-		},
-		{
-			src: 'http://placeimg.com/640/480/people/sepia',
-			alt: ''
-		},
-		{
-			src: 'http://placeimg.com/640/480/nature/sepia',
-			alt: ''
+			src: imagePath + 'signup-redesign.png',
+			alt: '',
+            summary: 'Production version of the signup redesign (for comparison).',
 		}
 	];
 </script>
-<Carousel images={imag} />
 
-<Carousel {images} />
+<Carousel images={finalProd} />
+
 <p>
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-	labore et dolore magna aliqua. Egestas quis ipsum suspendisse ultrices gravida dictum fusce ut
-	placerat. Lobortis elementum nibh tellus molestie nunc. Augue interdum velit euismod in
-	pellentesque massa placerat. Consequat semper viverra nam libero justo. Tellus in metus vulputate
-	eu scelerisque felis imperdiet proin fermentum. Mattis enim ut tellus elementum sagittis vitae et.
-	Mi proin sed libero enim. Nam aliquam sem et tortor. Arcu dui vivamus arcu felis. Tempus urna et
-	pharetra pharetra massa massa ultricies. Aliquet risus feugiat in ante metus dictum. Adipiscing
-	enim eu turpis egestas pretium aenean pharetra magna ac. Odio pellentesque diam volutpat commodo
-	sed egestas egestas. Risus viverra adipiscing at in tellus integer feugiat scelerisque. Mattis
-	enim ut tellus elementum sagittis vitae et leo duis. Ac placerat vestibulum lectus mauris ultrices
-	eros. Consequat id porta nibh venenatis cras sed. Aliquet risus feugiat in ante metus.
-	Pellentesque adipiscing commodo elit at imperdiet dui accumsan sit.
+	Sitting in the backlog of customer complaints was the curious case of questions asking the same
+	thing: <em>how do I start my trial?</em>. This was correleated with exit surveys on from customers
+	who had not converted to a paid plan, that the free product lacked key features for the customers
+	needs. User stories had been written up to address individual pain points during the onboarding
+	process but did not address the issue in its entirety.
 </p>
 
 <p>
-	Sollicitudin tempor id eu nisl nunc mi. Sem integer vitae justo eget magna fermentum iaculis. Vel
-	turpis nunc eget lorem dolor. Justo laoreet sit amet cursus sit amet. Lobortis feugiat vivamus at
-	augue. Magna etiam tempor orci eu lobortis elementum nibh tellus. Ultricies lacus sed turpis
-	tincidunt. Etiam dignissim diam quis enim lobortis scelerisque fermentum. Posuere urna nec
-	tincidunt praesent. Sed turpis tincidunt id aliquet. Amet luctus venenatis lectus magna fringilla
-	urna porttitor. Malesuada fames ac turpis egestas maecenas pharetra convallis. Blandit turpis
-	cursus in hac habitasse platea dictumst quisque. Malesuada nunc vel risus commodo. Sem integer
-	vitae justo eget magna. Justo donec enim diam vulputate ut. Mattis vulputate enim nulla aliquet
-	porttitor. Id venenatis a condimentum vitae sapien pellentesque habitant morbi.
+	The onboarding process needed to be addressed as a whole. This signup redesign is the first piece
+	of resolving the onboarding puzzle.
+</p>
+
+<h4>Background</h4>
+
+<Image image="{imagePath + 'old-signup.png'}" summary='The original signup screen just an account creation form.' />
+
+<p>
+	The original onboarding process was pieced together from individual development features. This
+	created a disparate experience without any progression from the marketing site and into the
+	product. The typical user journey was as follows:
+</p>
+
+<ol>
+	<li>Users would select their payment plan from the marketing site.</li>
+	<li>The marketing site would direct users to create an account in the product.</li>
+	<li>The product would refresh and redirect users to a settings page.</li>
+	<li>The settings page would scroll key page elements for starting a trial out of view.</li>
+	<li>Customers would never see the option to start a trial.</li>
+</ol>
+
+<p>From there customers would either contact support, or just abandon the product entirely.</p>
+
+<h4>Designing a Solution</h4>
+
+<Carousel images={designVsProd} />
+
+<p>
+	Comparative research into the onboarding process of similar services and partners provided the
+	needed groundwork for a signup redesign. Product requirements also dictated a few key parameters:
+</p>
+
+<ul>
+	<li>A credit card would be required of users to start a trial.</li>
+	<li>A product account is required to collect credit card details.</li>
+</ul>
+
+<p>
+	This is where the new signup process was focused. Create an account, capture a credit card.
+	Nothing outside industry norms, but quite the changeup to cutting users loose into a partially
+	functional product.
 </p>
 
 <p>
-	Placerat orci nulla pellentesque dignissim enim sit. Gravida in fermentum et sollicitudin ac orci
-	phasellus. Consectetur lorem donec massa sapien faucibus et. Cursus sit amet dictum sit amet justo
-	donec enim. Odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Felis eget
-	velit aliquet sagittis id consectetur purus ut faucibus. Nisl nisi scelerisque eu ultrices vitae
-	auctor eu augue ut. Amet justo donec enim diam. Id diam maecenas ultricies mi eget. Leo urna
-	molestie at elementum eu facilisis sed odio. Pellentesque dignissim enim sit amet venenatis urna
-	cursus. Egestas purus viverra accumsan in nisl nisi scelerisque. Amet nisl suscipit adipiscing
-	bibendum est ultricies integer. Sit amet cursus sit amet. Facilisi nullam vehicula ipsum a arcu
-	cursus vitae congue mauris. Vitae ultricies leo integer malesuada nunc vel.
+	Mockups for this project were lightweight, and a fair amount of design was done in-browser. This
+	was done to reach a testable MVP as quickly as possible. This allowed for rapid iterations on the
+	functional aspects of the new signup.
 </p>
 
-<p>
-	Enim facilisis gravida neque convallis a cras semper. Et odio pellentesque diam volutpat commodo
-	sed egestas. Libero justo laoreet sit amet cursus sit. In hac habitasse platea dictumst quisque
-	sagittis purus sit amet. A scelerisque purus semper eget duis at. Volutpat est velit egestas dui.
-	Dictum sit amet justo donec enim diam. Venenatis lectus magna fringilla urna porttitor rhoncus
-	dolor purus non. Sed arcu non odio euismod lacinia at quis. Nam at lectus urna duis convallis
-	convallis tellus. Id ornare arcu odio ut sem nulla pharetra diam sit.
-</p>
+<h4>Post-Launch Plans</h4>
 
 <p>
-	Eu consequat ac felis donec et odio. Commodo sed egestas egestas fringilla phasellus. Laoreet id
-	donec ultrices tincidunt arcu. Fusce id velit ut tortor pretium viverra. Ut tristique et egestas
-	quis ipsum suspendisse ultrices. At urna condimentum mattis pellentesque id nibh tortor id
-	aliquet. Massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin. Mauris
-	rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar. Ut ornare lectus sit amet. Diam
-	quam nulla porttitor massa id neque aliquam vestibulum morbi. Bibendum est ultricies integer quis
-	auctor elit sed. Sed viverra ipsum nunc aliquet bibendum. Urna molestie at elementum eu. At
-	volutpat diam ut venenatis. Non consectetur a erat nam.
+	A redesigned signup on its own could not solve for all of the onboarding issues that had been
+	identified. A dashboard redesign was done in order to address a larger looming issue with the
+	product: users were getting stuck on how to setup their product.
 </p>
+
+<!-- <Carousel images={imag} />
+
+<Carousel {images} /> -->

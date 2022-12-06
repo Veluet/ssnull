@@ -1,5 +1,6 @@
 <script>
 	import { base } from '$app/paths';
+	import Image from './Image.svelte';
 
 	export let images;
 	let me;
@@ -26,11 +27,14 @@
 						name="{me + '-carousel-radio-buttons'}"
 						id={me + '-img-' + image.id}
 						class={'carousel-img-' + image.id}
-						checked
+						checked={image.id == 0}
 					/>
 					<li class="slide-container">
 						<div class="slide-image">
 							<img src={image.src} alt={image.alt} />
+							{#if typeof image.summary !== 'undefined'}
+							<p class="summary">{image.summary}</p>
+							{/if}
 						</div>
 						<div class="carousel-controls">
 							<label for={me + '-img-' + image.prev} class="prev-slide">
@@ -66,6 +70,8 @@
 	}
 
 	.carousel {
+
+		--carousel-dots-height: 36px;
 
 	ul.slides {
 		display: block;
@@ -111,6 +117,17 @@
 		border-radius: var(--border-radius);
 	}
 
+	.slide-image > .summary {
+		position: absolute;
+		bottom: var(--carousel-dots-height);
+		left: 0;
+		right: 0;
+		width: 100%;
+		text-align: center;
+		background: rgba(255, 255, 255, 0.9);
+		font-size: 90%;
+	}
+
 	.carousel-controls {
 		position: absolute;
 		top: 0;
@@ -119,7 +136,7 @@
 		z-index: 999;
 		font-size: 100px;
 		line-height: 600px;
-		color: var(--white);
+		color: var(--gray-25);
 	}
 
 	.carousel-controls label {
@@ -153,6 +170,7 @@
 
 	.carousel-dots {
 		position: absolute;
+		height: var(--carousel-dots-height);
 		left: 0;
 		right: 0;
 		bottom: 0;

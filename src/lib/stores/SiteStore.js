@@ -7,8 +7,8 @@ export const pages = readable([
         name: 'Product & Design',
     },
     {
-        id: 'frontend-coding',
-        name: 'Frontend Coding',
+        id: 'frontend-code',
+        name: 'Frontend Code',
     },
     {
         id: 'art',
@@ -30,7 +30,7 @@ export const content = readable([
     {
         id: 'color-palettes-with-sass',
         name: 'Color Palettes with SASS',
-        parentId: 'frontend-coding',
+        parentId: 'frontend-code',
         summary: 'Generating a range of color tones using SASS.',
     },
     {
