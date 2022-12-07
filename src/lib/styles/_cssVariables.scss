@@ -24,6 +24,7 @@
 // This regx was easier than doing that in the mean time, turn on globals and new lines:
 // \.font-size-(\d+)[\w\d \-\.\,#]*{\s*font-size:\s*([\d\.]*rem)\s*\!important;\s*}
 :root {
+  --font-size-8:  0.5rem;
   --font-size-10: 0.625rem;
   --font-size-12: 0.75rem;
   --font-size-14: 0.875rem;

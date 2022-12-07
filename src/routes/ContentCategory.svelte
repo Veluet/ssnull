@@ -16,12 +16,12 @@
 {#if articles.length > 0}
 	<div class="margin-bottom-8">
 		<h2 class="margin-bottom-2">{page.name}</h2>
-		<div class="d-flex justify-content-start">
+		<div class="article-grid">
 			{#each articles as article (article.id)}
 			<div class="article-block">
 				<a href="{base}/articles/{article.parentId}/{article.id}" class="article-link">
 					<img src="{imagePath + article.id + '-1x.png'}" srcset="{imagePath + article.id + '-2x.png 2x'}" alt="" class="article-link-img" />
-					<span class="article-link-name">{article.name}</span>
+					<span class="article-link-name margin-top-2">{article.name}</span>
 				</a>
 				<div class="article-summary margin-top-1">{article.summary}</div>
 			</div>
@@ -31,8 +31,10 @@
 {/if}
 
 <style lang="scss">
-	.article-block {
-		width: 200px;
+	.article-grid {
+		display: grid;
+		grid-gap: 1.5rem;
+		grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
 	}
 	.article-link {
 		text-align: center;
@@ -41,6 +43,8 @@
 		width: 200px;
 		height: 150px;
 		border-radius: var(--border-radius);
+		margin: 0 auto;
+		display: block;
 	}
 	.article-link-name {
 		display: block;
