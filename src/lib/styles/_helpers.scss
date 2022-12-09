@@ -25,6 +25,7 @@
   margin: 0 !important;
 }
 
+@include helper-loop(0, 4, 1, 'margin', 'margin', 'rem', 0, .25);
 @include helper-loop(0, 4, 1, 'margin-top', 'margin-top', 'rem', 0, .25);
 @include helper-loop(0, 4, 1, 'margin-right', 'margin-right', 'rem', 0, .25);
 @include helper-loop(0, 8, 1, 'margin-bottom', 'margin-bottom', 'rem', 0, .25);
@@ -32,6 +33,7 @@
 
 
 /* Padding */
+@include helper-loop(0, 4, 1, 'padding', 'padding', 'rem', 0, .25);
 @include helper-loop(0, 4, 1, 'padding-top', 'padding-top', 'rem', 0, .25);
 @include helper-loop(0, 4, 1, 'padding-right', 'padding-right', 'rem', 0, .25);
 @include helper-loop(0, 4, 1, 'padding-bottom', 'padding-bottom', 'rem', 0, .25);
@@ -41,6 +43,19 @@
 .border-radius {
  border-radius: var(--border-radius);
 }
+.border-radius-top-left {
+  border-top-left-radius: var(--border-radius);
+ }
+ .border-radius-top-right {
+  border-top-right-radius: var(--border-radius);
+ }
+ .border-radius-bottom-left {
+  border-bottom-left-radius: var(--border-radius);
+ }
+ .border-radius-bottom-right {
+  border-bottom-right-radius: var(--border-radius);
+ }
+    
 
 /* Positioning */
 // Used for nudging elements slightly.
@@ -60,7 +75,10 @@
 }
 
 /* Flex */
-.d-flex {
+.display-block, .d-block {
+  display: block;
+}
+.display-flex, .d-flex {
   display: flex;
 }
 .justify-content-start {

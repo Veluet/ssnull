@@ -1,0 +1,44 @@
+/* Flex
+ * Stuff to generate display-flex helpers
+ */
+
+.display-flex {
+  display: flex;
+}
+
+/* EXAMPLE: .col-margin-1 or .row-margin-1 or .row-padding-1 or .col-margin-12 */
+// You get 1, 2, 3, 4, 8, 12, 16.  Padding isn't enabled (so enable if needed). Jump to end of file.
+
+// Add the breakpoints as they are needed: 'xs', 'sm', 'md', 'lg', 'xl', 'xxl'
+$flex-breakpoints: 'xs', 'sm', 'md', 'lg'; 
+
+@mixin flex-styles($breakpoint) {
+
+  @if $breakpoint == 'xs' {
+    $breakpoint: '';
+  }
+  @else {
+    $breakpoint: '-#{$breakpoint}';
+  }
+
+  .display-flex#{$breakpoint} {
+    display: flex;
+  }
+  .justify-content-start#{$breakpoint} {
+    justify-content: start;
+  }
+}
+
+@mixin flex-breakpoint-loop($breakpoints) {
+
+  @each $breakpoint in $breakpoints {
+
+    @media (min-width: map-get($bootstrap-breakpoints, $breakpoint)) {
+      @include flex-styles($breakpoint);
+    }
+
+  }
+
+}
+
+@include flex-breakpoint-loop($flex-breakpoints);

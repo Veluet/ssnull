@@ -3,17 +3,17 @@
 //  Create shades of each color and return values as map
 @function color-map($color, $values) {
     $base:        $values;
-    $lightest-ssjgssj:    scale-color(mix(#fff, $values, 99%), $saturation: 21%);
-    $lightest-ssjg:    scale-color(mix(#fff, $values, 97%), $saturation: 19%);
-    $lightest-ssj3:    scale-color(mix(#fff, $values, 93%), $saturation: 18%);
-    $lightest-ssj2:    scale-color(mix(#fff, $values, 90%), $saturation: 17%);
-    $lightest-ssj:    scale-color(mix(#fff, $values, 80%), $saturation: 15%);
-    $lightest:    scale-color(mix(#fff, $values, 60%), $saturation: 13%);
-    $lighter:     scale-color(mix(#fff, $values, 25%), $saturation: 11%);
-    $light-hint:  scale-color(mix(#fff, $values, 15%), $saturation:  9%);
-    $dark-hint:   scale-color(mix(#000, $values,  5%), $saturation: -3%);
-    $darker:      scale-color(mix(#000, $values, 30%), $saturation: -9%);
-    $darkest:     scale-color(mix(#000, $values, 45%), $saturation: -15%);
+    $lightest-ssjgssj:    scale-color(mix(#fff, $values, 99.5%), $saturation: 16%);
+    $lightest-ssjg:    scale-color(mix(#fff, $values, 99%), $saturation: 14%);
+    $lightest-ssj3:    scale-color(mix(#fff, $values, 95%), $saturation: 12%);
+    $lightest-ssj2:    scale-color(mix(#fff, $values, 90%), $saturation: 10%);
+    $lightest-ssj:    scale-color(mix(#fff, $values, 80%), $saturation: 8%);
+    $lightest:    scale-color(mix(#fff, $values, 60%), $saturation: 6%);
+    $lighter:     scale-color(mix(#fff, $values, 25%), $saturation: 4%);
+    $light-hint:  scale-color(mix(#fff, $values, 15%), $saturation:  2%);
+    $dark-hint:   scale-color(mix(#000, $values,  5%), $saturation: -2%);
+    $darker:      scale-color(mix(#000, $values, 30%), $saturation: -4%);
+    $darkest:     scale-color(mix(#000, $values, 45%), $saturation: -6%);
   
   
     $color-shades: (
@@ -25,7 +25,28 @@
             #{$color}-25:  $darker,
             #{$color}-0:   $darkest
     );
+
+    // There's always a need to go even further beyond with gray.
+    @if $color == "gray" {
+      $map: (#{$color}-200: $lightest-ssj);
+      $color-shades: map-merge($color-shades, $map);
+    }
   
+    @if $color == "gray" {
+      $map: (#{$color}-300: $lightest-ssj2);
+      $color-shades: map-merge($color-shades, $map);
+    }
+      
+    @if $color == "gray" {
+      $map: (#{$color}-400: $lightest-ssj3);
+      $color-shades: map-merge($color-shades, $map);
+    }
+          
+    @if $color == "gray" {
+      $map: (#{$color}-500: $lightest-ssjg);
+      $color-shades: map-merge($color-shades, $map);
+    }
+
     @return $color-shades;
   }
   //  Set up master map for all colors
