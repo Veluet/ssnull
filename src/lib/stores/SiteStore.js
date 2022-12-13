@@ -2,13 +2,13 @@ import { readable } from 'svelte/store';
 
 export const pages = readable([
     {
+        id: 'frontend-code',
+        name: 'Frontend Code',
+    },
+    {
 
         id: 'product-and-design',
         name: 'Product & Design',
-    },
-    {
-        id: 'frontend-code',
-        name: 'Frontend Code',
     },
     {
         id: 'art',
@@ -18,29 +18,24 @@ export const pages = readable([
 
 export const content = readable([
     {
-        id: 'signup-redesign',
-        name: 'Signup Redesign',
-        parentId: 'product-and-design',
-        summary: 'Replacing a static signup with one that assists users with onboarding.',
-    },
-    {
         id: 'onboarding-dashboard',
         name: 'Onboarding Dashboard',
         parentId: 'product-and-design',
         summary: 'Guiding new users into setting up their account.',
     },
     {
-        id: 'local-navigation',
-        name: 'Local Navigation',
+        id: 'signup-redesign',
+        name: 'Signup Redesign',
         parentId: 'product-and-design',
-        summary: 'Exposing features and providing context where it matters.',
+        summary: 'Replacing a static signup with one that assists users with onboarding.',
     },
-    {
-        id: 'hal-technique-for-css-architecture',
-        name: 'HAL technique for CSS',
-        parentId: 'frontend-code',
-        summary: 'How easily memorized classes can prevent CSS bloat.',
-    },
+
+    // {
+    //     id: 'local-navigation',
+    //     name: 'Local Navigation',
+    //     parentId: 'product-and-design',
+    //     summary: 'Exposing features and providing context where it matters.',
+    // },
     {
         id: 'helper-loops-for-sass',
         name: 'Helper Loops for SASS',
@@ -52,6 +47,12 @@ export const content = readable([
         name: 'Color Palettes with SASS',
         parentId: 'frontend-code',
         summary: 'Generating a range of color tones using SASS.',
+    },
+    {
+        id: 'hal-technique-for-css-architecture',
+        name: 'HAL technique for CSS',
+        parentId: 'frontend-code',
+        summary: 'How easily memorized classes can prevent CSS bloat.',
     },
     {
         id: 'digital-analog',
