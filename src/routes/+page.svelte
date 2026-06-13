@@ -3,7 +3,7 @@
 	import { pages } from '../lib/stores/SiteStore.js';
 </script>
 <svelte:head>
-    <title> SSNULL - S Soblo </title>
+    <title> SSNULL - Soblo </title>
 </svelte:head>
 
 

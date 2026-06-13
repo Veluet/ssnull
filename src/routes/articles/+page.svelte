@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-    <title> SSNULL - Steven Soblo </title>
+    <title> SSNULL - Soblo </title>
 </svelte:head>
 
 {#each $pages as {id, name}, i}
