@@ -19,7 +19,7 @@
 
 <div class="app">
 	<div class="author d-flex justify-content-end">
-		<p>Steven Soblo {year}</p>
+		<p>Soblo {year}</p>
 	</div>
 	<div class="the-box-wrapper-1">
 		<div class="the-box-wrapper-2">
@@ -50,7 +50,7 @@
 	</div>
 	{#if currentPath.length > 0}
 	<div class="author d-flex justify-content-end">
-		<p>Steven Soblo {year}</p>
+		<p>Soblo {year}</p>
 	</div>
 	{/if}
 </div>
