@@ -3,7 +3,7 @@
 	import { pages } from '../lib/stores/SiteStore.js';
 </script>
 <svelte:head>
-    <title> SSNULL - Steven Soblo </title>
+    <title> SSNULL - S Soblo </title>
 </svelte:head>
 
 
