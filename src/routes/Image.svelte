@@ -28,7 +28,7 @@
 		margin-left: auto;
 		margin-right: auto;
 		display: block;
-		height: 600px;
+		height: auto;
 		width: auto;
 		border-radius: var(--border-radius);
 		border: 1px solid var(--gray-50);
