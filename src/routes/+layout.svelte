@@ -11,7 +11,9 @@
 	$: currentPath = $page.url.pathname.split('/').filter((x) => x !== '');
 	// $: console.log('currentPath', currentPath);
 
-	$: section = currentPath[1] ? $pages.find((x) => x.id === currentPath[1]).name : '';
+	$: section = currentPath[1]
+		? $pages.find((x) => x.id === currentPath[1])?.name ?? ''
+		: '';
 	// $: console.log('section', section);
 
 	const year = Number(new Date().getFullYear()) >= 2022 ? new Date().getFullYear() : 2022;
@@ -19,7 +21,7 @@
 
 <div class="app">
 	<div class="author d-flex justify-content-end">
-		<p>Soblo {year}</p>
+		<p>Sylvia {year}</p>
 	</div>
 	<div class="the-box-wrapper-1">
 		<div class="the-box-wrapper-2">
@@ -61,7 +63,7 @@
 	}
 	.author > p {
 		position: relative;
-		z-index: 3;
+		z-index: 0;
 		background: var(--white-opacity-75);
 		border-radius: var(--border-radius);
 		padding: 2px;
