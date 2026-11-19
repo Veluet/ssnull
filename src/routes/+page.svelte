@@ -5,7 +5,7 @@
 	const path = "/images/artwork/"
 </script>
 <svelte:head>
-    <title> SSNULL - Soblo </title>
+    <title> SSNULL </title>
 </svelte:head>
 
 
